@@ -1,0 +1,29 @@
+/* Arduino code for determining the magnetic 
+and printing the output of the hall sensor 
+on serial monitor */
+
+int hall;                         
+void setup() {
+
+      Serial.begin(9600);
+      pinMode(7,INPUT);
+      \\ Taking the inptu from pin 7 of arduino
+}
+
+void loop() {
+              Serial.read();
+              hall= digitalRead(7);
+              \\ Copying data in the 7th pin to hall
+              if(hall==HIGH)
+              {
+                Serial.print("No Magnetic field then output of the hall sensor is one(1)");
+                Serial.println(hall);
+                delay(500);
+              }
+             else if(hall==LOW)
+              {
+                Serial.print(" Magnetic field output of the sensor is zero(0)");
+                Serial.println(hall);
+                delay(500);
+              }
+            }
